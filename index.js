@@ -1,34 +1,52 @@
-function verificaMaioridade() {
-    const idade = document.getElementById('idade').value;
-    const resultado = idade >= 18 ? "Você é maior de idade" : "Você é menor de idade";
-    document.getElementById('resultadoMaioridade').innerText = resultado;
+var nome = "Palmeiras";
+let idade = 25;
+const cidade = "São Paulo";
+
+console.log("Nome é: ", nome);
+console.log("Idade é: ", idade);
+console.log("Cidade é: ", cidade);
+
+// Exemplo de objeto
+const pessoa = {
+    nome: "Matheus",
+    idade: 26,
+    sexo: "Masculino",
+    telefone: "(42) 99999-9999"
 }
 
-function verificaParOuImpar() {
-    const numero = document.getElementById('numero').value;
-    const resultado = numero % 2 === 0 ? "Par" : "Ímpar";
-    document.getElementById('resultadoParOuImpar').innerText = `O número ${numero} é ${resultado}.`;
+console.log(pessoa);
+
+let cachorro = {
+    nome: 'Caramelo',
+    idade: 5,
+    vacinado: false
 }
 
-function verificaNumero() {
-    const numero = document.getElementById('numeroVerificacao').value;
-    let resultado;
-    if (numero > 0) {
-        resultado = "Número positivo";
-    } else if (numero < 0) {
-        resultado = "Número negativo";
-    } else {
-        resultado = "Zero";
-    }
-    document.getElementById('resultadoNumero').innerText = resultado;
-}
+cachorro.nome = "Banzé";
+cachorro.vacinado = true;
 
-function exibeTabuada() {
-    const numero = document.getElementById('numeroTabuada').value;
-    let resultado = '';
-    for (let i = 1; i <= 10; i++) {
-        resultado += `${numero} x ${i} = ${numero * i}<br>`;
-    }
-    document.getElementById('resultadoTabuada').innerHTML = resultado;
-}
+console.log(cachorro);
+
+// Concatenação de Strings
+let nomeCompleto = "Matheus";
+let message = "Bem vindo " + nomeCompleto + " ao sistema";
+
+console.log(message);
+
+// Operações com numbers
+let a = 25;
+let b = 30;
+
+let total = a + b;
+console.log("O total é: ", total);
+
+// Conversão para string
+let turma = 1;
+let turmaFormatado = String(turma);
+console.log(turmaFormatado);
+
+// Conversão para number;
+let telefone = "4299999999";
+let telefoneFormatado = Number(telefone);
+console.log(telefoneFormatado);
 
