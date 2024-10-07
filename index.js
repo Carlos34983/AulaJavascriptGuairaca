@@ -1,52 +1,41 @@
-var nome = "Palmeiras";
-let idade = 25;
-const cidade = "São Paulo";
+// Operadores Aritiméticos
+let x = 10;
+let y = 5;
 
-console.log("Nome é: ", nome);
-console.log("Idade é: ", idade);
-console.log("Cidade é: ", cidade);
+let soma = x + y;
+let subtracao = x - y;
+let multiplicacao = x * y;
+let divisao = x / y;
+let resto = x % y;  // Resto da divisão
 
-// Exemplo de objeto
-const pessoa = {
-    nome: "Matheus",
-    idade: 26,
-    sexo: "Masculino",
-    telefone: "(42) 99999-9999"
+// Operadores de Atribuição
+let a = 10;
+a += 5; // Equivalente a: a = a + 5
+a = a + 5;
+
+// Operadores de Comparação
+let idade = 20;
+let maiorIdade = idade >= 18;
+let igual10 = idade == 10;
+
+// Estruturas Condicionais
+const peso = 150;
+if (peso >= 100) {
+    console.log("É butijão de gás");
+} else {
+    console.log("é graveto");
 }
 
-console.log(pessoa);
-
-let cachorro = {
-    nome: 'Caramelo',
-    idade: 5,
-    vacinado: false
+// Estrutura de Repetição
+// Loop (for)
+for (let i = 0; i < 5; i ++) {
+    console.log("Intereção", i);
 }
 
-cachorro.nome = "Banzé";
-cachorro.vacinado = true;
-
-console.log(cachorro);
-
-// Concatenação de Strings
-let nomeCompleto = "Matheus";
-let message = "Bem vindo " + nomeCompleto + " ao sistema";
-
-console.log(message);
-
-// Operações com numbers
-let a = 25;
-let b = 30;
-
-let total = a + b;
-console.log("O total é: ", total);
-
-// Conversão para string
-let turma = 1;
-let turmaFormatado = String(turma);
-console.log(turmaFormatado);
-
-// Conversão para number;
-let telefone = "4299999999";
-let telefoneFormatado = Number(telefone);
-console.log(telefoneFormatado);
+// Lopp (while)
+let contador = 0;
+while (contador < 5) {
+    console.log("O contador é ", + contador);
+    contador++;
+}
 
