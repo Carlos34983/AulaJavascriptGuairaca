@@ -1,54 +1,34 @@
-// Funções simples (declarativa)
+function calculadora(a, b, condicao){
 
-function saudacao(){
-    return console.log("ola mundo");
+    if (condicao === 'soma'){
+        return a + b;
+    }
+    if (condicao === 'divisao'){
+        if (b === 0){
+            return 'divisão por 0, não é permitida'
+        }
+        return a / b;
+    }
+    if (condicao === 'subtracao'){
+        return a - b;
+
+    }
+    if (condicao === 'multiplicacao'){
+        return a * b;
+    }
+    return console.log('operacao invalida');
 }
 
-// Função com parâmetros
+console.log(calculadora(10, 5, 'soma'));         
+console.log(calculadora(10, 5, 'subtracao'));    
+console.log(calculadora(10, 5, 'multiplicacao')); 
+console.log(calculadora(10, 5, 'divisao'));       
+console.log(calculadora(10, 0, 'divisao'));       
+console.log(calculadora(10, 5, 'modulo'));  
 
-function soma(valorA, valorB){
-    const totalSoma = valorA + valorB;
-    return console.log(totalSoma);
-}
 
-// Função Anônima
 
-const multiplicar = function (valorA, valorB) {
-    const total = valorA * valorB;
-    return console.log(total);
-}
 
-// Arrow function
 
-const dividir = (a, b) => a / b;
 
-// Função com valor padrão de parâmetro
 
-function exponencial(base, expoente = 2) {
-    const exp = base ** expoente;
-    return console.log(exp);
-}
-
-// Invocar as funções
-
-saudacao();
-soma(10, 5);
-multiplicar(3, 6);
-exponencial(3);
-exponencial(3, 3);
-
-console.log(dividir(10, 5));
-
-// Função de callback
-
-function inicializarAplicacao(){
-    saudacao();
-    soma(10, 5);
-    multiplicar(3, 6);
-    exponencial(3);
-    exponencial(3, 3);
-
-    console.log(dividir(10, 5));
-}
-
-inicializarAplicacao();
