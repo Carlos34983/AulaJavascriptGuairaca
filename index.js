@@ -1,41 +1,54 @@
-// Operadores Aritiméticos
-let x = 10;
-let y = 5;
+// Funções simples (declarativa)
 
-let soma = x + y;
-let subtracao = x - y;
-let multiplicacao = x * y;
-let divisao = x / y;
-let resto = x % y;  // Resto da divisão
-
-// Operadores de Atribuição
-let a = 10;
-a += 5; // Equivalente a: a = a + 5
-a = a + 5;
-
-// Operadores de Comparação
-let idade = 20;
-let maiorIdade = idade >= 18;
-let igual10 = idade == 10;
-
-// Estruturas Condicionais
-const peso = 150;
-if (peso >= 100) {
-    console.log("É butijão de gás");
-} else {
-    console.log("é graveto");
+function saudacao(){
+    return console.log("ola mundo");
 }
 
-// Estrutura de Repetição
-// Loop (for)
-for (let i = 0; i < 5; i ++) {
-    console.log("Intereção", i);
+// Função com parâmetros
+
+function soma(valorA, valorB){
+    const totalSoma = valorA + valorB;
+    return console.log(totalSoma);
 }
 
-// Lopp (while)
-let contador = 0;
-while (contador < 5) {
-    console.log("O contador é ", + contador);
-    contador++;
+// Função Anônima
+
+const multiplicar = function (valorA, valorB) {
+    const total = valorA * valorB;
+    return console.log(total);
 }
 
+// Arrow function
+
+const dividir = (a, b) => a / b;
+
+// Função com valor padrão de parâmetro
+
+function exponencial(base, expoente = 2) {
+    const exp = base ** expoente;
+    return console.log(exp);
+}
+
+// Invocar as funções
+
+saudacao();
+soma(10, 5);
+multiplicar(3, 6);
+exponencial(3);
+exponencial(3, 3);
+
+console.log(dividir(10, 5));
+
+// Função de callback
+
+function inicializarAplicacao(){
+    saudacao();
+    soma(10, 5);
+    multiplicar(3, 6);
+    exponencial(3);
+    exponencial(3, 3);
+
+    console.log(dividir(10, 5));
+}
+
+inicializarAplicacao();
