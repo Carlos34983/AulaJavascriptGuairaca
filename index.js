@@ -1,34 +1,34 @@
-function calculadora(a, b, condicao){
+//selecionar por ID
 
-    if (condicao === 'soma'){
-        return a + b;
-    }
-    if (condicao === 'divisao'){
-        if (b === 0){
-            return 'divisão por 0, não é permitida'
-        }
-        return a / b;
-    }
-    if (condicao === 'subtracao'){
-        return a - b;
-
-    }
-    if (condicao === 'multiplicacao'){
-        return a * b;
-    }
-    return console.log('operacao invalida');
+function puxarElementoPorId() {
+    const subtitulo = document.getElementById('subtitulo');
+    return console.log(subtitulo);
 }
 
-console.log(calculadora(10, 5, 'soma'));         
-console.log(calculadora(10, 5, 'subtracao'));    
-console.log(calculadora(10, 5, 'multiplicacao')); 
-console.log(calculadora(10, 5, 'divisao'));       
-console.log(calculadora(10, 0, 'divisao'));       
-console.log(calculadora(10, 5, 'modulo'));  
+puxarElementoPorId();
 
+//selecionar por classe
 
+function puxarPorClasse(){
+    const titulo = document.getElementsByClassName('titulo');
+    return console.log(titulo);
+}
 
+puxarPorClasse();
 
+//selecionar por tag
 
+function puxarPorTag() {
+    const tags = document.getElementsByTagName('p');
+    return console.log(tags);
+}
 
+puxarPorTag();
+
+//funcao para modificar texto
+
+function setText() {
+    const subtitulo = document.getElementById('meuTitulo');
+    subtitulo.textContent = "agora vai!";
+}
 
