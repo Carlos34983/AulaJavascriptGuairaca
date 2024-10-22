@@ -2,15 +2,29 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Auja js Seletor de Elementos</title>
-        <script src="index.js"></script>
+        <title>aula 19</title>
     </head>
     <body>
-        <h1 class="titulo">Este é um H1</h1>
-        <h2 id="subtitulo">Este é um H2</h2>
-        <p>Este é um páragrafo</p>
-        <h1 id="meuTitulo">titulo alterado</h1>
+        <h2>formulário de contato</h2>
 
-        <button onclick="setText()">clique aqui</button>
+        <form id="contact-form">
+            <label for="name">Nome: </label>
+            <input type="text" id="name" name="name" required>
+
+            <br>
+
+            <labe for="email">Email: </labe>
+            <input type="email" id="email" name="email" required>
+
+            <br>
+
+            <textarea id="message" name="message" required>
+            </textarea>
+
+            <br>
+
+            <button type="submit">enviar</button>
+            <script rel="stylesheet" src="index.js"></script>
+        </form>
     </body>
 </html>

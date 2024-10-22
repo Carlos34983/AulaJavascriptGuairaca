@@ -1,34 +1,15 @@
-//selecionar por ID
+document.getElementById("contact-form").addEventListener(
+    "submit", function(event) {
+        event.preventDefault();
 
-function puxarElementoPorId() {
-    const subtitulo = document.getElementById('subtitulo');
-    return console.log(subtitulo);
-}
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
 
-puxarElementoPorId();
+        const mailtolink = `mailto:${email}?
+        subject=${encodeURIComponent('Assunto Reunião')}
+        &body=${encodeURIComponent(message)}`;
 
-//selecionar por classe
-
-function puxarPorClasse(){
-    const titulo = document.getElementsByClassName('titulo');
-    return console.log(titulo);
-}
-
-puxarPorClasse();
-
-//selecionar por tag
-
-function puxarPorTag() {
-    const tags = document.getElementsByTagName('p');
-    return console.log(tags);
-}
-
-puxarPorTag();
-
-//funcao para modificar texto
-
-function setText() {
-    const subtitulo = document.getElementById('meuTitulo');
-    subtitulo.textContent = "agora vai!";
-}
-
+        window.location.href = mailtolink;
+    }
+);
