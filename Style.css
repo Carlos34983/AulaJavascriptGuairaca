@@ -1,0 +1,66 @@
+.rotate {
+    width: 150px;
+    height: 150px;
+    background-color: aqua;
+}
+
+.fade {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+}
+
+.visible {
+    animation: fade 5s ease-in-out; 
+}
+
+@keyframes fade {
+    0%{
+        opacity: 0;        
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.pulse {
+    width: 150px;
+    height: 150px;
+    background-color: greenyellow;
+}
+
+.pulsing {
+    animation: pulse 0.3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.zoom {
+    width: 150px;
+    height: 150px;
+    background-color: blueviolet;
+
+}
+
+.zooming {
+    animation: zoom 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}

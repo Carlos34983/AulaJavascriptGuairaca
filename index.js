@@ -1,15 +1,22 @@
-document.getElementById("contact-form").addEventListener(
-    "submit", function(event) {
-        event.preventDefault();
+let rotationDegree = 0;
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+function rotateElement(){
+    rotationDegree += 45;
+    document.getElementById('rotating-div').style
+    .transform = `rotate(${rotationDegree}deg)`;
+}
 
-        const mailtolink = `mailto:${email}?
-        subject=${encodeURIComponent('Assunto Reunião')}
-        &body=${encodeURIComponent(message)}`;
+function toggleFade(){
+    const div = document.getElementById('fading-div');
+    div.classList.toggle('visible');
+}
 
-        window.location.href = mailtolink;
-    }
-);
+function togglePulse() {
+    const div = document.getElementById('pulsing-div');
+    div.classList.toggle('pulsing');
+}
+
+function zoomIn() {
+    const div = document.getElementById('zooming-div');
+    div.classList.add('zooming');
+}

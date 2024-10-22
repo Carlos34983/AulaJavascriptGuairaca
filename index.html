@@ -2,29 +2,33 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>aula 19</title>
+        <title>animação</title>
+        <link rel="stylesheet" href="Style.css">
+        <script src="index.js"></script>
     </head>
     <body>
-        <h2>formulário de contato</h2>
+        <h1>Aula Animações</h1>
+        <div class="rotate" id="rotating-div"></div>
+        <button onclick="rotateElement()">Rodando!</button>
 
-        <form id="contact-form">
-            <label for="name">Nome: </label>
-            <input type="text" id="name" name="name" required>
+        <br><br>
 
-            <br>
+        <div class="fade" id="fading-div"></div>
+        <button onclick="toggleFade()">
+            alterar visibilidade
+        </button>
 
-            <labe for="email">Email: </labe>
-            <input type="email" id="email" name="email" required>
+        <br><br>
 
-            <br>
+        <div class="pulse" id="pulsing-div"></div>
+        <button onclick="togglePulse()">
+            alterar Pulsar
+        </button>
 
-            <textarea id="message" name="message" required>
-            </textarea>
+        <br><br>
 
-            <br>
+        <div class="zoom" id="zooming-div"></div>
+        <button onclick="zoomIn()">ampliar</button>
 
-            <button type="submit">enviar</button>
-            <script rel="stylesheet" src="index.js"></script>
-        </form>
     </body>
 </html>
