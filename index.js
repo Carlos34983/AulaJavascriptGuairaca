@@ -1,35 +1,55 @@
-let arrayPokemons;
+document.addEventListener("DOMContentLoaded", () => {
+    const characterList = document.getElementById("character-list");
+  
+    async function fetchCharacters() {
+      try {
+        const response = await fetch("https://rickandmortyapi.com/api/character?page=19");
+        const data = await response.json();
+        
+        data.results.forEach(character => {
 
-function getPokemom() {
-    fetch(
-        "https://pokeapi.co/api/v2/pokemon",
-        {
-            method: "GET"
-        }
-    )
-    .then((response) => response.json())
-    .then((data) => {
-        arrayPokemons = data.results;
-        appendData(arrayPokemons);
-    })
-    .catch((error) => {
-        console.log("erro", error);
-    })
-}
+          const card = document.createElement("div");
+          card.classList.add("character-card");
+  
+          const img = document.createElement("img");
+          img.src = character.image;
+          img.alt = character.name;
 
-function appendData(pokemons){
-    let place = document.querySelector("#data-output");
-    let output = "";
+          const name = document.createElement("h2");
+          name.textContent = character.name;
 
-    for (let pokemon of pokemons){
-        output += `
-            <tr>
-                <td>${pokemon.name}</td>
-                <td>${pokemon.url}</td>
-            </tr>
-        `
+          const status = document.createElement("p");
+          status.textContent = `Status: ${character.status}`;
+  
+          const species = document.createElement("p");
+          species.textContent = `Espécie: ${character.species}`;
+          
+          if (character.type) {
+            const type = document.createElement("p");
+            type.textContent = `Tipo: ${character.type}`;
+            card.appendChild(type);
+          }
+ 
+          const origin = document.createElement("p");
+          origin.textContent = `Origem: ${character.origin.name}`;
+  
+          const location = document.createElement("p");
+          location.textContent = `Localização: ${character.location.name}`;
+  
+          card.appendChild(img);
+          card.appendChild(name);
+          card.appendChild(status);
+          card.appendChild(species);
+          card.appendChild(origin);
+          card.appendChild(location);
+
+          characterList.appendChild(card);
+        });
+      } catch (error) {
+        console.error("Erro ao obter os dados dos personagens:", error);
+      }
     }
-    place.innerHTML = output;
-}
-
-getPokemom();
+  
+    fetchCharacters();
+  });
+  
